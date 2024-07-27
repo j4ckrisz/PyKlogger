@@ -144,7 +144,7 @@ root.geometry("600x400")
 root.resizable(width=False, height=False)
 
 # Load the background image
-bg_image = Image.open("bgimg.jpg")
+bg_image = Image.open("images/bgimg.jpg")
 
 bg_image = bg_image.resize((600, 400), Image.LANCZOS)
 
